@@ -1,0 +1,181 @@
+/* =========================================================
+   MAISON AURÉLIEN — HOME HERO MOTION
+   ========================================================= */
+
+.hero-photo-area {
+  position: relative;
+  width: min(43vw, 620px);
+  justify-self: end;
+  align-self: center;
+  margin-right: 2vw;
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 7% 6% 8% 5%;
+  overflow: hidden;
+  background: #d8d4c7;
+  z-index: 2;
+}
+
+.hero-photo img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  display: block;
+
+  animation: galleryMotion 14s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+@keyframes galleryMotion {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.07) translateX(-1.5%);
+  }
+
+  100% {
+    transform: scale(1.12) translateX(1.5%);
+  }
+}
+
+
+/* Decorative frame */
+
+.hero-photo-border {
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid rgba(105, 114, 87, 0.45);
+
+  transform: translate(6%, -5%);
+
+  z-index: 1;
+}
+
+
+/* Image caption */
+
+.hero-photo-caption {
+  position: absolute;
+
+  left: 5%;
+  right: 6%;
+  bottom: 1%;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 8px;
+  letter-spacing: 0.18em;
+
+  color: #77766e;
+
+  z-index: 4;
+}
+
+
+/* Small label */
+
+.hero-photo-label {
+  position: absolute;
+
+  right: -25px;
+  bottom: 12%;
+
+  writing-mode: vertical-rl;
+
+  font-size: 8px;
+  letter-spacing: 0.25em;
+
+  color: #697257;
+}
+
+
+/* Hover */
+
+.hero-photo-frame {
+  transition: transform 0.5s ease;
+}
+
+.hero-photo-frame:hover {
+  transform: translateY(-6px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero-photo-area {
+    width: min(52vw, 480px);
+    margin-right: 5vw;
+    margin-top: 45px;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .hero-photo-area {
+    width: 78vw;
+    max-width: 420px;
+
+    margin: 55px auto 30px;
+
+    justify-self: center;
+  }
+
+  .hero-photo-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-photo {
+    inset: 6% 5% 9% 4%;
+  }
+
+  .hero-photo-border {
+    transform: translate(5%, -4%);
+  }
+
+  .hero-photo-caption {
+    left: 4%;
+    right: 5%;
+    bottom: 1%;
+
+    font-size: 7px;
+  }
+
+  .hero-photo-label {
+    right: -17px;
+    bottom: 15%;
+
+    font-size: 7px;
+  }
+
+}
+
+
+@media (max-width: 380px) {
+
+  .hero-photo-area {
+    width: 82vw;
+  }
+
+  .hero-photo-label {
+    display: none;
+  }
+
+}

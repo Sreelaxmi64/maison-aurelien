@@ -1,0 +1,1306 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap");
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+.dance-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f3efe4;
+  color: #171816;
+
+  overflow-x: hidden;
+}
+
+
+/* ================= HEADER ================= */
+
+.dance-header {
+  width: 100%;
+  height: 110px;
+
+  padding: 0 5vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(23, 24, 22, 0.2);
+}
+
+
+.dance-logo {
+  color: #171816;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.dance-logo span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 6px;
+}
+
+
+.dance-logo strong {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 37px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+
+.dance-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 40px;
+}
+
+
+.dance-nav a {
+  position: relative;
+
+  color: #171816;
+
+  text-decoration: none;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  padding-bottom: 7px;
+}
+
+
+.dance-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: #171816;
+
+  transition: width 0.3s ease;
+}
+
+
+.dance-nav a:hover::after,
+.dance-nav a.active::after {
+  width: 100%;
+}
+
+
+.dance-menu {
+  width: 58px;
+  height: 58px;
+
+  border: 1px solid #171816;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+}
+
+
+.dance-menu span {
+  width: 20px;
+  height: 1px;
+
+  background: #171816;
+}
+
+
+/* ================= HERO ================= */
+
+.dance-hero {
+  position: relative;
+
+  min-height: calc(100vh - 110px);
+
+  padding: 8vh 5vw 7vh;
+
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 5vw;
+
+  align-items: center;
+
+  border-bottom: 1px solid rgba(23, 24, 22, 0.2);
+}
+
+
+.dance-hero-number {
+  position: absolute;
+
+  top: 45px;
+  left: 5vw;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+
+.dance-hero-content {
+  padding-top: 60px;
+}
+
+
+.dance-eyebrow,
+.dance-label {
+  margin: 0;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+}
+
+
+.dance-hero-content h1 {
+  margin: 35px 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-weight: 400;
+
+  font-size: clamp(80px, 10vw, 160px);
+
+  line-height: 0.75;
+
+  letter-spacing: -5px;
+}
+
+
+.dance-hero-content h1 i {
+  color: #758064;
+
+  font-weight: 400;
+}
+
+
+.dance-hero-description {
+  max-width: 360px;
+
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 300;
+
+  line-height: 1.8;
+}
+
+
+/* MAIN PHOTO */
+
+.dance-hero-image {
+  width: 100%;
+
+  height: 78vh;
+
+  overflow: hidden;
+
+  background: #e7e3d8;
+}
+
+
+.dance-hero-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  animation: danceImageReveal 1.4s ease both;
+}
+
+
+@keyframes danceImageReveal {
+
+  from {
+    opacity: 0;
+
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+}
+
+
+.dance-hero-side {
+  position: absolute;
+
+  left: 1.5vw;
+
+  top: 50%;
+
+  transform: translateY(-50%) rotate(-90deg);
+
+  transform-origin: left center;
+
+  display: flex;
+
+  gap: 25px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+
+.dance-scroll {
+  position: absolute;
+
+  right: 5vw;
+
+  bottom: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+.dance-scroll span {
+  font-size: 17px;
+}
+
+
+/* ================= INTRO ================= */
+
+.dance-intro {
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 150px 5vw;
+
+  display: grid;
+
+  grid-template-columns: 100px 1fr;
+
+  gap: 50px;
+}
+
+
+.dance-section-number {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+
+.dance-intro-content {
+  max-width: 950px;
+}
+
+
+.dance-intro-content h2 {
+  margin: 35px 0 60px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(65px, 8vw, 125px);
+
+  font-weight: 400;
+
+  line-height: 0.82;
+
+  letter-spacing: -4px;
+}
+
+
+.dance-intro-content h2 i {
+  color: #758064;
+
+  font-weight: 400;
+}
+
+
+.dance-intro-text {
+  max-width: 530px;
+
+  margin: 0 0 20px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 300;
+
+  line-height: 1.9;
+
+  color: #575950;
+}
+
+
+/* ================= FEATURE ================= */
+
+.dance-feature {
+  padding: 0 5vw 160px;
+
+  position: relative;
+}
+
+
+.dance-feature-meta {
+  max-width: 1400px;
+
+  margin: auto;
+
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(23, 24, 22, 0.3);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+
+.dance-feature-image {
+  max-width: 1150px;
+
+  margin: auto;
+
+  height: 800px;
+
+  overflow: hidden;
+
+  background: #e8e5dd;
+}
+
+
+.dance-feature-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 1s ease;
+}
+
+
+.dance-feature-image:hover img {
+  transform: scale(1.025);
+}
+
+
+.dance-feature-caption {
+  max-width: 1150px;
+
+  margin: 40px auto 0;
+
+  display: grid;
+
+  grid-template-columns: 80px 1fr;
+
+  gap: 30px;
+}
+
+
+.dance-feature-caption > span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+
+.dance-feature-caption h3 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 5vw, 75px);
+
+  font-weight: 400;
+
+  line-height: 0.85;
+
+  letter-spacing: -2px;
+}
+
+
+.dance-feature-caption p {
+  max-width: 400px;
+
+  margin: 25px 0 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  font-weight: 300;
+
+  color: #66675f;
+}
+
+
+/* ================= PHILOSOPHY ================= */
+
+.dance-philosophy {
+  padding: 150px 5vw;
+
+  background: #1b1d19;
+
+  color: #f3efe4;
+
+  display: grid;
+
+  grid-template-columns: 100px 1fr;
+
+  gap: 50px;
+}
+
+
+.dance-philosophy-label {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+
+.dance-philosophy-label span {
+  display: block;
+
+  margin-bottom: 15px;
+}
+
+
+.dance-philosophy-label p {
+  margin: 0;
+
+  writing-mode: vertical-rl;
+
+  opacity: 0.55;
+}
+
+
+.dance-philosophy-main {
+  max-width: 1100px;
+}
+
+
+.dance-philosophy-main h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(65px, 9vw, 140px);
+
+  font-weight: 400;
+
+  line-height: 0.78;
+
+  letter-spacing: -5px;
+}
+
+
+.dance-philosophy-main h2 i {
+  color: #a6ad94;
+
+  font-weight: 400;
+}
+
+
+.dance-philosophy-grid {
+  margin-top: 130px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 60px;
+}
+
+
+.dance-philosophy-grid div {
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(243, 239, 228, 0.3);
+}
+
+
+.dance-philosophy-grid span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+.dance-philosophy-grid h3 {
+  margin: 35px 0 15px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+  font-weight: 400;
+}
+
+
+.dance-philosophy-grid p {
+  max-width: 250px;
+
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+  font-weight: 300;
+
+  opacity: 0.65;
+}
+
+
+/* ================= STATEMENT ================= */
+
+.dance-statement {
+  padding: 160px 5vw;
+
+  display: grid;
+
+  grid-template-columns: 1fr 0.8fr;
+
+  gap: 9vw;
+
+  align-items: center;
+}
+
+
+.dance-statement-image {
+  height: 650px;
+
+  overflow: hidden;
+
+  background: #e7e3da;
+}
+
+
+.dance-statement-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+
+.dance-statement-text {
+  max-width: 500px;
+}
+
+
+.dance-statement-text h2 {
+  margin: 35px 0 45px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(65px, 7vw, 110px);
+
+  font-weight: 400;
+
+  line-height: 0.8;
+
+  letter-spacing: -4px;
+}
+
+
+.dance-statement-text h2 i {
+  color: #758064;
+}
+
+
+.dance-statement-text > p:last-child {
+  max-width: 360px;
+
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.9;
+
+  color: #64655e;
+
+  font-weight: 300;
+}
+
+
+/* ================= PROGRAMME ================= */
+
+.dance-programme {
+  padding: 130px 5vw 150px;
+
+  border-top: 1px solid rgba(23, 24, 22, 0.25);
+}
+
+
+.dance-programme-top {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  border-bottom: 1px solid rgba(23, 24, 22, 0.25);
+
+  padding-bottom: 18px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+
+.dance-programme-top span:nth-child(2) {
+  text-align: center;
+}
+
+
+.dance-programme-top span:nth-child(3) {
+  text-align: right;
+}
+
+
+.dance-programme-heading {
+  max-width: 1150px;
+
+  margin: 100px auto 80px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 0.6fr;
+
+  gap: 80px;
+
+  align-items: end;
+}
+
+
+.dance-programme-heading h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(70px, 9vw, 135px);
+
+  font-weight: 400;
+
+  line-height: 0.78;
+
+  letter-spacing: -5px;
+}
+
+
+.dance-programme-heading h2 i {
+  color: #758064;
+}
+
+
+.dance-programme-heading p {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  font-weight: 300;
+
+  color: #606159;
+}
+
+
+.dance-programme-list {
+  max-width: 1150px;
+
+  margin: auto;
+}
+
+
+.programme-row {
+  min-height: 150px;
+
+  display: grid;
+
+  grid-template-columns: 80px 1fr 50px;
+
+  align-items: center;
+
+  gap: 30px;
+
+  border-top: 1px solid rgba(23, 24, 22, 0.25);
+
+  color: #171816;
+
+  transition: padding 0.4s ease;
+}
+
+
+.programme-row:last-child {
+  border-bottom: 1px solid rgba(23, 24, 22, 0.25);
+}
+
+
+.programme-row:hover {
+  padding-left: 20px;
+}
+
+
+.programme-row > span:first-child {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+
+.programme-row h3 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 38px;
+
+  font-weight: 400;
+}
+
+
+.programme-row p {
+  margin: 7px 0 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  color: #85867e;
+
+  letter-spacing: 1px;
+}
+
+
+.programme-arrow {
+  font-size: 22px;
+
+  justify-self: end;
+
+  transition: transform 0.3s ease;
+}
+
+
+.programme-row:hover .programme-arrow {
+  transform: translate(5px, -5px);
+}
+
+
+/* ================= FOOTER ================= */
+
+.dance-footer {
+  padding: 60px 5vw 45px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: end;
+
+  border-top: 1px solid rgba(23, 24, 22, 0.25);
+}
+
+
+.dance-footer-logo {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.dance-footer-logo span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 5px;
+}
+
+
+.dance-footer-logo strong {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 34px;
+
+  font-weight: 500;
+}
+
+
+.dance-footer-middle p {
+  margin: 5px 0;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  color: #77786f;
+}
+
+
+.dance-footer > a {
+  justify-self: end;
+
+  color: #171816;
+
+  text-decoration: none;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+  .dance-header {
+    height: 90px;
+
+    padding: 0 6vw;
+  }
+
+
+  .dance-nav {
+    display: none;
+  }
+
+
+  .dance-logo strong {
+    font-size: 30px;
+  }
+
+
+  .dance-menu {
+    width: 52px;
+    height: 52px;
+  }
+
+
+  .dance-hero {
+    min-height: auto;
+
+    padding: 90px 6vw 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 60px;
+  }
+
+
+  .dance-hero-number {
+    top: 30px;
+
+    left: 6vw;
+  }
+
+
+  .dance-hero-content {
+    padding-top: 0;
+  }
+
+
+  .dance-hero-content h1 {
+    font-size: clamp(75px, 16vw, 130px);
+  }
+
+
+  .dance-hero-image {
+    height: 650px;
+  }
+
+
+  .dance-hero-side,
+  .dance-scroll {
+    display: none;
+  }
+
+
+  .dance-intro {
+    padding: 110px 6vw;
+
+    display: block;
+  }
+
+
+  .dance-section-number {
+    margin-bottom: 35px;
+  }
+
+
+  .dance-feature {
+    padding: 0 6vw 110px;
+  }
+
+
+  .dance-feature-image {
+    height: 650px;
+  }
+
+
+  .dance-philosophy {
+    padding: 110px 6vw;
+
+    display: block;
+  }
+
+
+  .dance-philosophy-label {
+    margin-bottom: 40px;
+  }
+
+
+  .dance-philosophy-label p {
+    writing-mode: initial;
+  }
+
+
+  .dance-philosophy-grid {
+    margin-top: 90px;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+
+  .dance-statement {
+    padding: 110px 6vw;
+
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+
+  .dance-statement-image {
+    height: 650px;
+  }
+
+
+  .dance-programme {
+    padding: 100px 6vw 110px;
+  }
+
+
+  .dance-programme-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .dance-programme-top span:nth-child(3) {
+    display: none;
+  }
+
+
+  .dance-programme-top span:nth-child(2) {
+    text-align: right;
+  }
+
+
+  .dance-programme-heading {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    margin: 80px auto 60px;
+  }
+
+
+  .dance-footer {
+    padding: 50px 6vw 35px;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .dance-footer > a {
+    justify-self: start;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .dance-header {
+    height: 82px;
+  }
+
+
+  .dance-logo span {
+    font-size: 7px;
+
+    letter-spacing: 4px;
+  }
+
+
+  .dance-logo strong {
+    font-size: 27px;
+  }
+
+
+  .dance-hero {
+    padding: 75px 6vw 70px;
+
+    gap: 45px;
+  }
+
+
+  .dance-hero-content h1 {
+    margin: 25px 0 30px;
+
+    font-size: clamp(65px, 20vw, 100px);
+
+    letter-spacing: -3px;
+  }
+
+
+  .dance-hero-description {
+    font-size: 12px;
+  }
+
+
+  .dance-hero-image {
+    height: 530px;
+  }
+
+
+  .dance-intro {
+    padding: 90px 6vw;
+  }
+
+
+  .dance-intro-content h2 {
+    margin: 30px 0 45px;
+
+    font-size: clamp(60px, 18vw, 90px);
+
+    letter-spacing: -3px;
+  }
+
+
+  .dance-intro-text {
+    font-size: 12px;
+  }
+
+
+  .dance-feature {
+    padding: 0 6vw 90px;
+  }
+
+
+  .dance-feature-meta {
+    height: 50px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .dance-feature-image {
+    height: 540px;
+  }
+
+
+  .dance-feature-caption {
+    grid-template-columns: 35px 1fr;
+
+    gap: 15px;
+
+    margin-top: 25px;
+  }
+
+
+  .dance-feature-caption h3 {
+    font-size: 47px;
+  }
+
+
+  .dance-feature-caption p {
+    font-size: 11px;
+  }
+
+
+  .dance-philosophy {
+    padding: 90px 6vw;
+  }
+
+
+  .dance-philosophy-main h2 {
+    font-size: clamp(60px, 18vw, 90px);
+
+    letter-spacing: -3px;
+  }
+
+
+  .dance-philosophy-grid {
+    margin-top: 70px;
+  }
+
+
+  .dance-statement {
+    padding: 90px 6vw;
+  }
+
+
+  .dance-statement-image {
+    height: 500px;
+  }
+
+
+  .dance-statement-text h2 {
+    font-size: clamp(60px, 18vw, 90px);
+
+    letter-spacing: -3px;
+  }
+
+
+  .dance-programme {
+    padding: 80px 6vw 90px;
+  }
+
+
+  .dance-programme-heading h2 {
+    font-size: clamp(65px, 18vw, 95px);
+
+    letter-spacing: -3px;
+  }
+
+
+  .programme-row {
+    min-height: 120px;
+
+    grid-template-columns: 30px 1fr 20px;
+
+    gap: 12px;
+  }
+
+
+  .programme-row h3 {
+    font-size: 25px;
+  }
+
+
+  .programme-row p {
+    font-size: 8px;
+  }
+
+
+  .dance-footer-logo strong {
+    font-size: 29px;
+  }
+
+}

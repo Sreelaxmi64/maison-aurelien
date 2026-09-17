@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap");
+
+
+/* ================================
+   PAGE
+================================ */
+
+.exhibitions-page {
+  min-height: 100vh;
+  background: #f3efe3;
+  color: #171816;
+  overflow-x: hidden;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.exhibitions-header {
+  height: 120px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23, 24, 22, 0.25);
+  box-sizing: border-box;
+}
+
+
+/* LOGO */
+
+.exhibitions-logo {
+  text-decoration: none;
+  color: #171816;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.exhibitions-logo span {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 6px;
+}
+
+.exhibitions-logo strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+
+/* NAV */
+
+.exhibitions-nav {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.exhibitions-nav a {
+  position: relative;
+  color: #171816;
+  text-decoration: none;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding-bottom: 8px;
+}
+
+.exhibitions-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #171816;
+  transition: width 0.3s ease;
+}
+
+.exhibitions-nav a:hover::after,
+.exhibitions-nav a.active::after {
+  width: 100%;
+}
+
+
+/* MENU */
+
+.menu-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #171816;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  width: 22px;
+  height: 1px;
+  background: #171816;
+}
+
+
+/* ================================
+   INTRO
+================================ */
+
+.exhibitions-intro {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 110px 5% 130px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+.intro-number {
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding-top: 10px;
+}
+
+.intro-content {
+  max-width: 850px;
+}
+
+.intro-label {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 5px;
+  margin: 0 0 35px;
+}
+
+.intro-content h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(80px, 11vw, 170px);
+  font-weight: 400;
+  line-height: 0.78;
+  letter-spacing: -5px;
+}
+
+.intro-content h1 i {
+  color: #758064;
+  font-weight: 400;
+}
+
+.intro-description {
+  max-width: 430px;
+  margin-top: 60px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+
+/* ================================
+   EXHIBITION LIST
+================================ */
+
+.exhibition-list {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+
+/* TOP LABEL */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(23, 24, 22, 0.35);
+  border-bottom: 1px solid rgba(23, 24, 22, 0.35);
+  padding: 18px 0;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+
+/* EACH ITEM */
+
+.exhibition-item {
+  min-height: 220px;
+  display: grid;
+  grid-template-columns: 100px 1fr 60px;
+  align-items: center;
+  gap: 35px;
+  border-bottom: 1px solid rgba(23, 24, 22, 0.25);
+  transition:
+    padding 0.5s ease,
+    background 0.5s ease;
+}
+
+.exhibition-item:hover {
+  padding-left: 25px;
+  padding-right: 25px;
+  background: rgba(117, 128, 100, 0.06);
+}
+
+
+/* NUMBER */
+
+.exhibition-number {
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+
+/* MAIN CONTENT */
+
+.exhibition-main h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 0.95;
+  font-weight: 400;
+}
+
+.exhibition-category {
+  margin: 12px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: #85867e;
+  letter-spacing: 0.5px;
+}
+
+.exhibition-description {
+  max-width: 450px;
+  margin: 18px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+
+/* ARROW */
+
+.exhibition-arrow {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  transition: transform 0.4s ease;
+}
+
+.exhibition-item:hover .exhibition-arrow {
+  transform: translate(6px, -6px);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.exhibitions-footer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 100px 5% 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.exhibitions-footer span {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.exhibitions-footer p {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #85867e;
+  margin-top: 10px;
+}
+
+.exhibitions-footer a {
+  color: #171816;
+  text-decoration: none;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+  .exhibitions-header {
+    height: 95px;
+    padding: 0 6%;
+  }
+
+  .exhibitions-logo strong {
+    font-size: 30px;
+  }
+
+  .exhibitions-nav {
+    display: none;
+  }
+
+  .menu-button {
+    width: 54px;
+    height: 54px;
+  }
+
+
+  .exhibitions-intro {
+    padding: 80px 6% 90px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .intro-content h1 {
+    font-size: clamp(70px, 19vw, 120px);
+    letter-spacing: -3px;
+  }
+
+  .intro-description {
+    margin-top: 45px;
+  }
+
+
+  .exhibition-list {
+    padding: 0 6%;
+  }
+
+  .exhibition-item {
+    min-height: auto;
+    padding: 35px 0;
+    grid-template-columns: 45px 1fr 25px;
+    gap: 15px;
+  }
+
+  .exhibition-item:hover {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .exhibition-main h2 {
+    font-size: 42px;
+  }
+
+  .exhibition-description {
+    font-size: 13px;
+  }
+
+
+  .exhibitions-footer {
+    padding: 80px 6% 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
