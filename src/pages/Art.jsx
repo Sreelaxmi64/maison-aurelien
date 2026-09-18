@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import "./Art.css"
 
 function Art() {
   return (
@@ -84,7 +85,14 @@ function Art() {
               <span>INSTALLATION</span>
             </div>
 
-            <div className="programme-card-visual bonsai-visual">
+            <div
+              className="programme-card-visual bonsai-visual"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1524594081293-190a2fe0baae?auto=format&fit=crop&w=1600&q=85')"
+              }}
+            >
+              <div className="visual-overlay"></div>
 
               <span className="visual-letter">
                 B
@@ -130,7 +138,14 @@ function Art() {
               <span>PERFORMANCE</span>
             </div>
 
-            <div className="programme-card-visual dance-visual">
+            <div
+              className="programme-card-visual dance-visual"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=1600&q=85')"
+              }}
+            >
+              <div className="visual-overlay"></div>
 
               <span className="visual-letter">
                 D
@@ -174,7 +189,14 @@ function Art() {
               <span>SOUND</span>
             </div>
 
-            <div className="programme-card-visual music-visual">
+            <div
+              className="programme-card-visual music-visual"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1600&q=85')"
+              }}
+            >
+              <div className="visual-overlay"></div>
 
               <span className="visual-letter">
                 M
@@ -218,7 +240,14 @@ function Art() {
               <span>STAGE</span>
             </div>
 
-            <div className="programme-card-visual theatre-visual">
+            <div
+              className="programme-card-visual theatre-visual"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1600&q=85')"
+              }}
+            >
+              <div className="visual-overlay"></div>
 
               <span className="visual-letter">
                 T
