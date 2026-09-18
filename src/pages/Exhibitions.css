@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Mono:wght@300;400&family=Inter:wght@300;400&display=swap");
 
-
-/* ================================
-   PAGE
-================================ */
+* {
+  box-sizing: border-box;
+}
 
 .exhibitions-page {
+  width: 100%;
   min-height: 100vh;
   background: #f3efe3;
   color: #171816;
@@ -13,34 +13,35 @@
 }
 
 
-/* ================================
+/* ==================================================
    HEADER
-================================ */
+================================================== */
 
 .exhibitions-header {
+  width: 100%;
   height: 120px;
-  padding: 0 5%;
+
+  padding: 0 4.5vw;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(23, 24, 22, 0.25);
-  box-sizing: border-box;
+
+  border-bottom: 1px solid rgba(23, 24, 22, 0.22);
 }
 
-
-/* LOGO */
-
 .exhibitions-logo {
-  text-decoration: none;
-  color: #171816;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
+
+  text-decoration: none;
+  color: #171816;
 }
 
 .exhibitions-logo span {
   font-family: "DM Mono", monospace;
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 6px;
 }
 
@@ -51,9 +52,6 @@
   letter-spacing: 1px;
 }
 
-
-/* NAV */
-
 .exhibitions-nav {
   display: flex;
   align-items: center;
@@ -62,22 +60,29 @@
 
 .exhibitions-nav a {
   position: relative;
+
   color: #171816;
   text-decoration: none;
+
   font-family: "DM Mono", monospace;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 2px;
+
   padding-bottom: 8px;
 }
 
 .exhibitions-nav a::after {
   content: "";
+
   position: absolute;
   left: 0;
   bottom: 0;
+
   width: 0;
   height: 1px;
+
   background: #171816;
+
   transition: width 0.3s ease;
 }
 
@@ -86,289 +91,570 @@
   width: 100%;
 }
 
-
-/* MENU */
-
-.menu-button {
+.exhibitions-menu {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+
   border: 1px solid #171816;
+  border-radius: 50%;
+
   background: transparent;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   gap: 6px;
+
   cursor: pointer;
 }
 
-.menu-button span {
+.exhibitions-menu span {
   width: 22px;
   height: 1px;
   background: #171816;
 }
 
 
-/* ================================
-   INTRO
-================================ */
+/* ==================================================
+   HERO
+================================================== */
 
-.exhibitions-intro {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 110px 5% 130px;
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 40px;
-  box-sizing: border-box;
+.exhibitions-hero {
+  width: 100%;
+
+  padding: 70px 3vw 0;
 }
 
-.intro-number {
+
+/* ==================================================
+   BIG TITLE
+================================================== */
+
+.exhibitions-hero-top {
+  position: relative;
+
+  width: 100%;
+
+  padding-bottom: 65px;
+
+  border-bottom: 1px solid rgba(23, 24, 22, 0.25);
+}
+
+.exhibitions-hero-top h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(
+    100px,
+    15vw,
+    225px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.75;
+
+  letter-spacing: -9px;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+/* ==================================================
+   LEFT WHAT'S ON LABEL
+================================================== */
+
+.exhibitions-side-label {
+  position: absolute;
+
+  left: 0;
+  bottom: 15px;
+
+  width: 135px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 22px;
+}
+
+.exhibitions-side-label > span {
   font-family: "DM Mono", monospace;
-  font-size: 12px;
+
+  font-size: 9px;
+
   letter-spacing: 2px;
+}
+
+.exhibitions-side-label div {
+  display: flex;
+  flex-direction: column;
+}
+
+.exhibitions-side-label div span {
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  line-height: 1.5;
+}
+
+
+/* ==================================================
+   CONTENT AREA
+================================================== */
+
+.exhibitions-content {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 0.7fr)
+    minmax(600px, 1fr);
+
+  gap: 5vw;
+
+  padding-top: 45px;
+}
+
+
+/* ==================================================
+   LEFT SIDE
+================================================== */
+
+.exhibitions-intro-space {
   padding-top: 10px;
 }
 
-.intro-content {
-  max-width: 850px;
-}
-
-.intro-label {
-  font-family: "DM Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 5px;
-  margin: 0 0 35px;
-}
-
-.intro-content h1 {
+.exhibitions-intro-space p {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(80px, 11vw, 170px);
-  font-weight: 400;
-  line-height: 0.78;
-  letter-spacing: -5px;
-}
 
-.intro-content h1 i {
-  color: #758064;
-  font-weight: 400;
-}
+  font-family: "DM Mono", monospace;
 
-.intro-description {
-  max-width: 430px;
-  margin-top: 60px;
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 9px;
+
   line-height: 1.8;
-  font-weight: 300;
+
+  letter-spacing: 3px;
+
+  opacity: 0.5;
 }
 
 
-/* ================================
+/* ==================================================
    EXHIBITION LIST
-================================ */
+================================================== */
 
-.exhibition-list {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 5%;
-  box-sizing: border-box;
+.exhibitions-list {
+  width: 100%;
 }
 
+.exhibition-row {
+  min-height: 185px;
 
-/* TOP LABEL */
-
-.section-heading {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid rgba(23, 24, 22, 0.35);
-  border-bottom: 1px solid rgba(23, 24, 22, 0.35);
-  padding: 18px 0;
-  font-family: "DM Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 4px;
-}
-
-
-/* EACH ITEM */
-
-.exhibition-item {
-  min-height: 220px;
   display: grid;
-  grid-template-columns: 100px 1fr 60px;
+
+  grid-template-columns:
+    70px
+    1fr
+    35px;
+
   align-items: center;
-  gap: 35px;
-  border-bottom: 1px solid rgba(23, 24, 22, 0.25);
+
+  gap: 25px;
+
+  color: #171816;
+
+  text-decoration: none;
+
+  border-top: 1px solid rgba(23, 24, 22, 0.28);
+
   transition:
-    padding 0.5s ease,
-    background 0.5s ease;
+    padding 0.45s ease,
+    background 0.45s ease;
 }
 
-.exhibition-item:hover {
-  padding-left: 25px;
-  padding-right: 25px;
-  background: rgba(117, 128, 100, 0.06);
+.exhibition-row:last-child {
+  border-bottom: 1px solid rgba(23, 24, 22, 0.28);
+}
+
+.exhibition-row:hover {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  background: rgba(116, 128, 98, 0.06);
 }
 
 
-/* NUMBER */
+/* ==================================================
+   NUMBER
+================================================== */
 
-.exhibition-number {
+.exhibition-row-number {
   font-family: "DM Mono", monospace;
-  font-size: 12px;
+
+  font-size: 10px;
+
   letter-spacing: 2px;
 }
 
 
-/* MAIN CONTENT */
+/* ==================================================
+   TITLE
+================================================== */
 
-.exhibition-main h2 {
+.exhibition-row-content h2 {
   margin: 0;
+
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(42px, 5vw, 72px);
-  line-height: 0.95;
+
+  font-size: clamp(
+    45px,
+    4vw,
+    68px
+  );
+
   font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: -2px;
+
+  transition: transform 0.45s ease;
 }
+
+.exhibition-row:hover h2 {
+  transform: translateX(8px);
+}
+
+
+/* ==================================================
+   CATEGORY
+================================================== */
 
 .exhibition-category {
-  margin: 12px 0 0;
+  margin: 13px 0 0;
+
   font-family: "Inter", sans-serif;
-  font-size: 12px;
-  color: #85867e;
-  letter-spacing: 0.5px;
+
+  font-size: 11px;
+
+  color: #999990;
 }
+
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
 
 .exhibition-description {
-  max-width: 450px;
-  margin: 18px 0 0;
+  max-width: 460px;
+
+  margin: 10px 0 0;
+
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+
+  font-size: 11px;
+
   line-height: 1.7;
+
   font-weight: 300;
+
+  color: #66675f;
 }
 
 
-/* ARROW */
+/* ==================================================
+   ARROW
+================================================== */
 
-.exhibition-arrow {
+.exhibition-row-arrow {
   font-family: "Inter", sans-serif;
-  font-size: 20px;
-  transition: transform 0.4s ease;
+
+  font-size: 18px;
+
+  justify-self: end;
+
+  transition:
+    transform 0.4s ease;
 }
 
-.exhibition-item:hover .exhibition-arrow {
-  transform: translate(6px, -6px);
+.exhibition-row:hover .exhibition-row-arrow {
+  transform:
+    translate(6px, -6px);
 }
 
 
-/* ================================
+/* ==================================================
    FOOTER
-================================ */
+================================================== */
 
 .exhibitions-footer {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 100px 5% 50px;
+  width: 100%;
+
+  padding: 120px 5vw 50px;
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: flex-end;
-  box-sizing: border-box;
 }
 
 .exhibitions-footer span {
   font-family: "DM Mono", monospace;
-  font-size: 11px;
+
+  font-size: 9px;
+
   letter-spacing: 4px;
 }
 
 .exhibitions-footer p {
+  margin: 10px 0 0;
+
   font-family: "Inter", sans-serif;
-  font-size: 13px;
+
+  font-size: 11px;
+
   color: #85867e;
-  margin-top: 10px;
 }
 
 .exhibitions-footer a {
   color: #171816;
+
   text-decoration: none;
+
   font-family: "DM Mono", monospace;
-  font-size: 11px;
+
+  font-size: 9px;
+
   letter-spacing: 2px;
 }
 
 
-/* ================================
-   MOBILE
-================================ */
+/* ==================================================
+   TABLET
+================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
 
   .exhibitions-header {
-    height: 95px;
-    padding: 0 6%;
-  }
+    height: 100px;
 
-  .exhibitions-logo strong {
-    font-size: 30px;
+    padding: 0 6vw;
   }
 
   .exhibitions-nav {
     display: none;
   }
 
-  .menu-button {
-    width: 54px;
-    height: 54px;
+  .exhibitions-logo strong {
+    font-size: 31px;
+  }
+
+  .exhibitions-menu {
+    width: 55px;
+    height: 55px;
   }
 
 
-  .exhibitions-intro {
-    padding: 80px 6% 90px;
+  .exhibitions-hero {
+    padding: 65px 6vw 0;
+  }
+
+
+  .exhibitions-hero-top {
+    padding-bottom: 55px;
+  }
+
+
+  .exhibitions-hero-top h1 {
+    font-size: clamp(
+      80px,
+      14vw,
+      145px
+    );
+
+    letter-spacing: -5px;
+
+    text-align: left;
+  }
+
+
+  .exhibitions-side-label {
+    position: static;
+
+    margin-top: 35px;
+  }
+
+
+  .exhibitions-content {
     grid-template-columns: 1fr;
-    gap: 20px;
+
+    gap: 45px;
+
+    padding-top: 45px;
   }
 
-  .intro-content h1 {
-    font-size: clamp(70px, 19vw, 120px);
+
+  .exhibitions-intro-space {
+    display: none;
+  }
+
+
+  .exhibition-row {
+    min-height: 170px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .exhibitions-header {
+    height: 82px;
+  }
+
+  .exhibitions-logo span {
+    font-size: 7px;
+
+    letter-spacing: 4px;
+  }
+
+  .exhibitions-logo strong {
+    font-size: 27px;
+  }
+
+  .exhibitions-menu {
+    width: 48px;
+    height: 48px;
+  }
+
+
+  .exhibitions-hero {
+    padding: 55px 6vw 0;
+  }
+
+
+  .exhibitions-hero-top {
+    padding-bottom: 40px;
+  }
+
+
+  .exhibitions-hero-top h1 {
+    font-size: clamp(
+      58px,
+      17vw,
+      95px
+    );
+
+    line-height: 0.8;
+
     letter-spacing: -3px;
+
+    white-space: normal;
   }
 
-  .intro-description {
-    margin-top: 45px;
-  }
 
+  .exhibitions-side-label {
+    margin-top: 25px;
 
-  .exhibition-list {
-    padding: 0 6%;
-  }
-
-  .exhibition-item {
-    min-height: auto;
-    padding: 35px 0;
-    grid-template-columns: 45px 1fr 25px;
     gap: 15px;
   }
 
-  .exhibition-item:hover {
+
+  .exhibitions-side-label > span {
+    font-size: 8px;
+  }
+
+  .exhibitions-side-label div span {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+
+  .exhibitions-content {
+    padding-top: 30px;
+  }
+
+
+  .exhibition-row {
+
+    grid-template-columns:
+      28px
+      1fr
+      20px;
+
+    gap: 10px;
+
+    min-height: auto;
+
+    padding: 32px 0;
+
+    align-items: start;
+  }
+
+
+  .exhibition-row:hover {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .exhibition-main h2 {
-    font-size: 42px;
+
+  .exhibition-row-number {
+    font-size: 8px;
   }
 
+
+  .exhibition-row-content h2 {
+    font-size: 38px;
+
+    line-height: 0.9;
+
+    letter-spacing: -1px;
+  }
+
+
+  .exhibition-category {
+    font-size: 9px;
+
+    margin-top: 10px;
+  }
+
+
   .exhibition-description {
-    font-size: 13px;
+    font-size: 10px;
+
+    line-height: 1.7;
+  }
+
+
+  .exhibition-row-arrow {
+    font-size: 15px;
   }
 
 
   .exhibitions-footer {
-    padding: 80px 6% 40px;
+    padding: 75px 6vw 35px;
+
     flex-direction: column;
+
     align-items: flex-start;
-    gap: 40px;
+
+    gap: 30px;
   }
+
 }
