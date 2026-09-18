@@ -22,14 +22,7 @@ function Exhibitions() {
       title: "Living Forms",
       category: "Art & Movement",
       description:
-        "Where visual art meets movement, performance and the human body.",
-    },
-    {
-      number: "04",
-      title: "Echoes of Culture",
-      category: "Contemporary Culture",
-      description:
-        "A meeting point between tradition, contemporary expression and culture.",
+        "An exploration of movement, performance and the human body.",
     },
   ]
 
@@ -37,6 +30,7 @@ function Exhibitions() {
     <div className="exhibitions-page">
 
       {/* HEADER */}
+
       <header className="exhibitions-header">
 
         <Link to="/" className="exhibitions-logo">
@@ -50,11 +44,14 @@ function Exhibitions() {
           <Link to="/exhibitions" className="active">
             EXHIBITIONS
           </Link>
-          <Link to="/">ABOUT</Link>
-          <Link to="/">VISIT</Link>
+          <a href="/#about">ABOUT</a>
+          <a href="/#visit">VISIT</a>
         </nav>
 
-        <button className="menu-button">
+        <button
+          className="exhibitions-menu"
+          aria-label="Menu"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -63,84 +60,85 @@ function Exhibitions() {
       </header>
 
 
-      {/* PAGE INTRO */}
-      <section className="exhibitions-intro">
+      {/* EXHIBITIONS */}
 
-        <div className="intro-number">
-          02
+      <section className="exhibitions-hero">
+
+        <div className="exhibitions-hero-top">
+
+          <div className="exhibitions-side-label">
+            <span>05</span>
+
+            <div>
+              <span>WHAT'S</span>
+              <span>ON</span>
+            </div>
+          </div>
+
         </div>
 
-        <div className="intro-content">
-          <p className="intro-label">
-            THE EXHIBITIONS
-          </p>
 
-          <h1>
-            Art that
-            <br />
-            <i>moves.</i>
-          </h1>
+        <div className="exhibitions-content">
 
-          <p className="intro-description">
-            Discover exhibitions that bring together visual art,
-            movement, sound and contemporary culture.
-          </p>
+          <div className="exhibitions-intro-space">
+            <p>
+              CONTEMPORARY
+              <br />
+              CULTURE
+            </p>
+          </div>
+
+
+          <div className="exhibitions-list">
+
+            {exhibitions.map((exhibition) => (
+              <Link
+                to="/art"
+                className="exhibition-row"
+                key={exhibition.number}
+              >
+
+                <div className="exhibition-row-number">
+                  {exhibition.number}
+                </div>
+
+                <div className="exhibition-row-content">
+
+                  <h2>{exhibition.title}</h2>
+
+                  <p className="exhibition-category">
+                    {exhibition.category}
+                  </p>
+
+                  <p className="exhibition-description">
+                    {exhibition.description}
+                  </p>
+
+                </div>
+
+                <div className="exhibition-row-arrow">
+                  ↗
+                </div>
+
+              </Link>
+            ))}
+
+          </div>
+
         </div>
-
-      </section>
-
-
-      {/* EXHIBITION LIST */}
-      <section className="exhibition-list">
-
-        <div className="section-heading">
-          <span>WHAT'S ON</span>
-          <span>2026</span>
-        </div>
-
-        {exhibitions.map((exhibition) => (
-          <article
-            className="exhibition-item"
-            key={exhibition.number}
-          >
-
-            <div className="exhibition-number">
-              {exhibition.number}
-            </div>
-
-            <div className="exhibition-main">
-
-              <h2>
-                {exhibition.title}
-              </h2>
-
-              <p className="exhibition-category">
-                {exhibition.category}
-              </p>
-
-              <p className="exhibition-description">
-                {exhibition.description}
-              </p>
-
-            </div>
-
-            <div className="exhibition-arrow">
-              ↗
-            </div>
-
-          </article>
-        ))}
 
       </section>
 
 
       {/* FOOTER */}
+
       <footer className="exhibitions-footer">
 
         <div>
           <span>MAISON AURÉLIEN</span>
+
           <p>
-            Contemporary art house
+            Contemporary Art House
           </p>
         </div>
 

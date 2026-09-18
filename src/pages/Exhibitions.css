@@ -1,304 +1,374 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Mono:wght@300;400&family=Inter:wght@300;400&display=swap");
+/* =====================================================
+   MAISON AURÉLIEN
+   EXHIBITIONS PAGE
+===================================================== */
 
-* {
-  box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap");
 
-.exhibitions-page {
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.museum-exhibitions-page {
+  --cream: #eee9dc;
+  --black: #191916;
+  --olive: #69705a;
+
   width: 100%;
   min-height: 100vh;
-  background: #f3efe3;
-  color: #171816;
+
+  margin: 0;
+  padding: 0;
+
+  background: var(--cream);
+  color: var(--black);
+
+  font-family: "Inter", sans-serif;
+
   overflow-x: hidden;
 }
 
+.museum-exhibitions-page *,
+.museum-exhibitions-page *::before,
+.museum-exhibitions-page *::after {
+  box-sizing: border-box;
+}
 
-/* ==================================================
+.museum-exhibitions-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =====================================================
    HEADER
-================================================== */
+===================================================== */
 
-.exhibitions-header {
+.museum-exhibitions-header {
+  position: relative !important;
+
   width: 100%;
-  height: 120px;
+  height: 105px;
 
   padding: 0 4.5vw;
 
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid rgba(23, 24, 22, 0.22);
+  background: var(--cream);
+
+  border-bottom: 1px solid rgba(25, 25, 22, 0.25);
+
+  z-index: 100;
 }
 
-.exhibitions-logo {
-  display: flex;
+
+/* LOGO */
+
+.museum-exhibitions-logo {
+  display: flex !important;
   flex-direction: column;
-  gap: 3px;
 
-  text-decoration: none;
-  color: #171816;
+  line-height: 0.8;
 }
 
-.exhibitions-logo span {
+.museum-exhibitions-logo span {
   font-family: "DM Mono", monospace;
+
   font-size: 9px;
+
   letter-spacing: 6px;
+
+  margin-bottom: 8px;
 }
 
-.exhibitions-logo strong {
+.museum-exhibitions-logo strong {
   font-family: "Cormorant Garamond", serif;
+
   font-size: 38px;
+
   font-weight: 500;
-  letter-spacing: 1px;
-}
 
-.exhibitions-nav {
-  display: flex;
-  align-items: center;
-  gap: 42px;
-}
-
-.exhibitions-nav a {
-  position: relative;
-
-  color: #171816;
-  text-decoration: none;
-
-  font-family: "DM Mono", monospace;
-  font-size: 11px;
   letter-spacing: 2px;
+}
+
+
+/* NAV */
+
+.museum-exhibitions-nav {
+  display: flex !important;
+
+  align-items: center;
+
+  gap: 40px;
+}
+
+.museum-exhibitions-nav a {
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  transition: opacity 0.3s ease;
+}
+
+.museum-exhibitions-nav a:hover {
+  opacity: 0.5;
+}
+
+.museum-exhibitions-active {
+  border-bottom: 1px solid var(--black);
 
   padding-bottom: 8px;
 }
 
-.exhibitions-nav a::after {
-  content: "";
 
-  position: absolute;
-  left: 0;
-  bottom: 0;
+/* MENU */
 
-  width: 0;
-  height: 1px;
+.museum-exhibitions-menu {
+  width: 55px;
+  height: 55px;
 
-  background: #171816;
+  border: 1px solid var(--black);
 
-  transition: width 0.3s ease;
-}
-
-.exhibitions-nav a:hover::after,
-.exhibitions-nav a.active::after {
-  width: 100%;
-}
-
-.exhibitions-menu {
-  width: 64px;
-  height: 64px;
-
-  border: 1px solid #171816;
   border-radius: 50%;
 
   background: transparent;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
 
-  gap: 6px;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
 
   cursor: pointer;
 }
 
-.exhibitions-menu span {
-  width: 22px;
+.museum-exhibitions-menu span {
+  display: block;
+
+  width: 19px;
   height: 1px;
-  background: #171816;
+
+  background: var(--black);
 }
 
 
-/* ==================================================
-   HERO
-================================================== */
+/* =====================================================
+   MAIN
+===================================================== */
 
-.exhibitions-hero {
+.museum-exhibitions-main {
   width: 100%;
 
-  padding: 70px 3vw 0;
-}
-
-
-/* ==================================================
-   BIG TITLE
-================================================== */
-
-.exhibitions-hero-top {
-  position: relative;
-
-  width: 100%;
-
-  padding-bottom: 65px;
-
-  border-bottom: 1px solid rgba(23, 24, 22, 0.25);
-}
-
-.exhibitions-hero-top h1 {
   margin: 0;
+  padding: 0 4.5vw 100px;
 
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(
-    100px,
-    15vw,
-    225px
-  );
-
-  font-weight: 400;
-
-  line-height: 0.75;
-
-  letter-spacing: -9px;
-
-  text-align: center;
-
-  white-space: nowrap;
+  background: var(--cream);
 }
 
 
-/* ==================================================
-   LEFT WHAT'S ON LABEL
-================================================== */
+/* =====================================================
+   TITLE
+===================================================== */
 
-.exhibitions-side-label {
-  position: absolute;
+.museum-exhibitions-title {
+  position: relative !important;
 
+  width: 100%;
+
+  height: 390px;
+
+  margin: 0 !important;
+  padding: 55px 0 0 !important;
+
+  display: block !important;
+
+  overflow: visible;
+
+  z-index: 1;
+}
+
+
+/* LABEL */
+
+.museum-exhibitions-label {
+  position: absolute !important;
+
+  top: 60px;
   left: 0;
-  bottom: 15px;
 
-  width: 135px;
+  display: flex !important;
 
-  display: flex;
   align-items: flex-start;
-
-  gap: 22px;
-}
-
-.exhibitions-side-label > span {
-  font-family: "DM Mono", monospace;
-
-  font-size: 9px;
-
-  letter-spacing: 2px;
-}
-
-.exhibitions-side-label div {
-  display: flex;
-  flex-direction: column;
-}
-
-.exhibitions-side-label div span {
-  font-family: "DM Mono", monospace;
-
-  font-size: 9px;
-
-  letter-spacing: 4px;
-
-  line-height: 1.5;
-}
-
-
-/* ==================================================
-   CONTENT AREA
-================================================== */
-
-.exhibitions-content {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(250px, 0.7fr)
-    minmax(600px, 1fr);
-
-  gap: 5vw;
-
-  padding-top: 45px;
-}
-
-
-/* ==================================================
-   LEFT SIDE
-================================================== */
-
-.exhibitions-intro-space {
-  padding-top: 10px;
-}
-
-.exhibitions-intro-space p {
-  margin: 0;
-
-  font-family: "DM Mono", monospace;
-
-  font-size: 9px;
-
-  line-height: 1.8;
-
-  letter-spacing: 3px;
-
-  opacity: 0.5;
-}
-
-
-/* ==================================================
-   EXHIBITION LIST
-================================================== */
-
-.exhibitions-list {
-  width: 100%;
-}
-
-.exhibition-row {
-  min-height: 185px;
-
-  display: grid;
-
-  grid-template-columns:
-    70px
-    1fr
-    35px;
-
-  align-items: center;
 
   gap: 25px;
 
-  color: #171816;
+  font-family: "DM Mono", monospace;
 
-  text-decoration: none;
+  font-size: 9px;
 
-  border-top: 1px solid rgba(23, 24, 22, 0.28);
+  letter-spacing: 3px;
 
-  transition:
-    padding 0.45s ease,
-    background 0.45s ease;
+  line-height: 1.5;
+
+  z-index: 3;
 }
 
-.exhibition-row:last-child {
-  border-bottom: 1px solid rgba(23, 24, 22, 0.28);
+.museum-exhibitions-label > span {
+  font-size: 9px;
 }
 
-.exhibition-row:hover {
-  padding-left: 20px;
-  padding-right: 20px;
+.museum-exhibitions-label div {
+  display: flex !important;
 
-  background: rgba(116, 128, 98, 0.06);
+  flex-direction: column;
+
+  line-height: 1.4;
 }
 
 
-/* ==================================================
-   NUMBER
-================================================== */
+/* BIG TITLE */
 
-.exhibition-row-number {
+.museum-exhibitions-title h1 {
+  position: relative !important;
+
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  transform: none !important;
+
+  width: 100% !important;
+
+  height: auto !important;
+
+  margin: 90px 0 0 !important;
+  padding: 0 !important;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(90px, 12vw, 175px);
+
+  font-weight: 400;
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  white-space: nowrap;
+
+  color: var(--black);
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   EXHIBITION LIST SECTION
+===================================================== */
+
+.museum-exhibitions-list-section {
+  position: relative !important;
+
+  width: 100%;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: grid !important;
+
+  grid-template-columns: 120px minmax(0, 1fr);
+
+  gap: 20px;
+
+  z-index: 10;
+}
+
+
+/* LEFT TEXT */
+
+.museum-exhibitions-side-text {
+  padding-top: 10px;
+}
+
+.museum-exhibitions-side-text p {
+  margin: 0;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  line-height: 1.7;
+
+  color: var(--olive);
+}
+
+
+/* =====================================================
+   LIST
+===================================================== */
+
+.museum-exhibitions-list {
+  position: relative !important;
+
+  width: 100%;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border-top: 1px solid rgba(25, 25, 22, 0.25);
+}
+
+
+/* =====================================================
+   EXHIBITION ITEM
+===================================================== */
+
+.museum-exhibition-item {
+  position: relative !important;
+
+  width: 100%;
+
+  min-height: 175px;
+
+  margin: 0 !important;
+  padding: 32px 0 !important;
+
+  display: grid !important;
+
+  grid-template-columns: 70px minmax(0, 1fr) 40px;
+
+  gap: 20px;
+
+  align-items: center;
+
+  border-bottom: 1px solid rgba(25, 25, 22, 0.25);
+
+  background: transparent;
+
+  z-index: 20;
+
+  transition: padding-left 0.3s ease;
+}
+
+.museum-exhibition-item:hover {
+  padding-left: 20px !important;
+}
+
+
+/* NUMBER */
+
+.museum-exhibition-number {
   font-family: "DM Mono", monospace;
 
   font-size: 10px;
@@ -307,131 +377,112 @@
 }
 
 
-/* ==================================================
-   TITLE
-================================================== */
+/* CONTENT */
 
-.exhibition-row-content h2 {
-  margin: 0;
+.museum-exhibition-info {
+  min-width: 0;
+}
+
+.museum-exhibition-info h2 {
+  position: relative !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: clamp(
-    45px,
-    4vw,
-    68px
-  );
+  font-size: clamp(42px, 4vw, 58px);
 
   font-weight: 400;
 
-  line-height: 0.9;
+  line-height: 0.95;
 
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 
-  transition: transform 0.45s ease;
-}
-
-.exhibition-row:hover h2 {
-  transform: translateX(8px);
+  color: var(--black);
 }
 
 
-/* ==================================================
-   CATEGORY
-================================================== */
+/* CATEGORY */
 
-.exhibition-category {
-  margin: 13px 0 0;
-
-  font-family: "Inter", sans-serif;
+.museum-exhibition-category {
+  margin: 10px 0 0 !important;
 
   font-size: 11px;
 
-  color: #999990;
+  color: rgba(25, 25, 22, 0.5);
 }
 
 
-/* ==================================================
-   DESCRIPTION
-================================================== */
+/* DESCRIPTION */
 
-.exhibition-description {
-  max-width: 460px;
+.museum-exhibition-description {
+  max-width: 520px;
 
-  margin: 10px 0 0;
+  margin: 10px 0 0 !important;
 
-  font-family: "Inter", sans-serif;
-
-  font-size: 11px;
+  font-size: 12px;
 
   line-height: 1.7;
 
-  font-weight: 300;
-
-  color: #66675f;
+  color: rgba(25, 25, 22, 0.6);
 }
 
 
-/* ==================================================
-   ARROW
-================================================== */
+/* ARROW */
 
-.exhibition-row-arrow {
-  font-family: "Inter", sans-serif;
-
-  font-size: 18px;
-
+.museum-exhibition-arrow {
   justify-self: end;
 
-  transition:
-    transform 0.4s ease;
-}
+  font-family: "DM Mono", monospace;
 
-.exhibition-row:hover .exhibition-row-arrow {
-  transform:
-    translate(6px, -6px);
+  font-size: 18px;
 }
 
 
-/* ==================================================
+/* =====================================================
    FOOTER
-================================================== */
+===================================================== */
 
-.exhibitions-footer {
+.museum-exhibitions-footer {
+  position: relative !important;
+
   width: 100%;
 
-  padding: 120px 5vw 50px;
+  padding: 45px 4.5vw;
 
-  display: flex;
+  display: flex !important;
+
+  align-items: center;
 
   justify-content: space-between;
 
-  align-items: flex-end;
+  background: var(--black);
+
+  color: var(--cream);
 }
 
-.exhibitions-footer span {
+.museum-exhibitions-footer span {
   font-family: "DM Mono", monospace;
 
   font-size: 9px;
 
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 }
 
-.exhibitions-footer p {
-  margin: 10px 0 0;
+.museum-exhibitions-footer p {
+  margin: 8px 0 0;
 
-  font-family: "Inter", sans-serif;
+  font-family: "DM Mono", monospace;
 
-  font-size: 11px;
+  font-size: 9px;
 
-  color: #85867e;
+  letter-spacing: 2px;
+
+  opacity: 0.55;
 }
 
-.exhibitions-footer a {
-  color: #171816;
-
-  text-decoration: none;
-
+.museum-exhibitions-footer a {
   font-family: "DM Mono", monospace;
 
   font-size: 9px;
@@ -440,215 +491,185 @@
 }
 
 
-/* ==================================================
+/* =====================================================
    TABLET
-================================================== */
+===================================================== */
 
 @media (max-width: 1000px) {
 
-  .exhibitions-header {
-    height: 100px;
+  .museum-exhibitions-nav {
+    display: none !important;
+  }
+
+  .museum-exhibitions-title {
+    height: 330px;
+  }
+
+  .museum-exhibitions-title h1 {
+    font-size: clamp(75px, 12vw, 135px);
+  }
+
+  .museum-exhibitions-list-section {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .museum-exhibition-item {
+    grid-template-columns: 50px minmax(0, 1fr) 30px;
+
+    min-height: 150px;
+  }
+
+  .museum-exhibition-info h2 {
+    font-size: 44px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .museum-exhibitions-header {
+    height: 80px;
 
     padding: 0 6vw;
   }
 
-  .exhibitions-nav {
-    display: none;
+  .museum-exhibitions-logo strong {
+    font-size: 30px;
   }
 
-  .exhibitions-logo strong {
-    font-size: 31px;
-  }
-
-  .exhibitions-menu {
-    width: 55px;
-    height: 55px;
-  }
-
-
-  .exhibitions-hero {
-    padding: 65px 6vw 0;
-  }
-
-
-  .exhibitions-hero-top {
-    padding-bottom: 55px;
-  }
-
-
-  .exhibitions-hero-top h1 {
-    font-size: clamp(
-      80px,
-      14vw,
-      145px
-    );
-
-    letter-spacing: -5px;
-
-    text-align: left;
-  }
-
-
-  .exhibitions-side-label {
-    position: static;
-
-    margin-top: 35px;
-  }
-
-
-  .exhibitions-content {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-
-    padding-top: 45px;
-  }
-
-
-  .exhibitions-intro-space {
-    display: none;
-  }
-
-
-  .exhibition-row {
-    min-height: 170px;
-  }
-
-}
-
-
-/* ==================================================
-   MOBILE
-================================================== */
-
-@media (max-width: 600px) {
-
-  .exhibitions-header {
-    height: 82px;
-  }
-
-  .exhibitions-logo span {
-    font-size: 7px;
-
-    letter-spacing: 4px;
-  }
-
-  .exhibitions-logo strong {
-    font-size: 27px;
-  }
-
-  .exhibitions-menu {
+  .museum-exhibitions-menu {
     width: 48px;
     height: 48px;
   }
 
 
-  .exhibitions-hero {
-    padding: 55px 6vw 0;
+  /* MAIN */
+
+  .museum-exhibitions-main {
+    padding: 0 6vw 70px;
   }
 
 
-  .exhibitions-hero-top {
-    padding-bottom: 40px;
+  /* TITLE */
+
+  .museum-exhibitions-title {
+    height: 365px;
+
+    padding-top: 40px !important;
   }
 
 
-  .exhibitions-hero-top h1 {
-    font-size: clamp(
-      58px,
-      17vw,
-      95px
-    );
+  /* LABEL */
 
-    line-height: 0.8;
+  .museum-exhibitions-label {
+    position: relative !important;
+
+    top: auto;
+    left: auto;
+
+    margin: 0 0 55px;
+
+    gap: 18px;
+  }
+
+
+  /* BIG TITLE */
+
+  .museum-exhibitions-title h1 {
+    position: relative !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    font-size: clamp(58px, 16vw, 105px);
+
+    line-height: 0.85;
 
     letter-spacing: -3px;
 
-    white-space: normal;
+    white-space: nowrap;
   }
 
 
-  .exhibitions-side-label {
-    margin-top: 25px;
+  /* LIST SECTION */
 
-    gap: 15px;
+  .museum-exhibitions-list-section {
+    display: block !important;
+
+    width: 100%;
   }
 
 
-  .exhibitions-side-label > span {
-    font-size: 8px;
-  }
-
-  .exhibitions-side-label div span {
-    font-size: 8px;
-
-    letter-spacing: 3px;
+  .museum-exhibitions-side-text {
+    display: none;
   }
 
 
-  .exhibitions-content {
-    padding-top: 30px;
+  /* LIST */
+
+  .museum-exhibitions-list {
+    width: 100%;
   }
 
 
-  .exhibition-row {
+  /* ITEM */
 
-    grid-template-columns:
-      28px
-      1fr
-      20px;
+  .museum-exhibition-item {
+    min-height: 0;
 
-    gap: 10px;
+    padding: 30px 0 !important;
 
-    min-height: auto;
+    grid-template-columns: 30px minmax(0, 1fr) 20px;
 
-    padding: 32px 0;
+    gap: 12px;
 
     align-items: start;
   }
 
-
-  .exhibition-row:hover {
-    padding-left: 0;
-    padding-right: 0;
+  .museum-exhibition-item:hover {
+    padding-left: 0 !important;
   }
 
 
-  .exhibition-row-number {
-    font-size: 8px;
+  /* TITLE */
+
+  .museum-exhibition-info h2 {
+    font-size: clamp(31px, 9vw, 40px);
+
+    line-height: 0.98;
   }
 
 
-  .exhibition-row-content h2 {
-    font-size: 38px;
+  .museum-exhibition-category {
+    margin-top: 8px !important;
 
-    line-height: 0.9;
-
-    letter-spacing: -1px;
-  }
-
-
-  .exhibition-category {
-    font-size: 9px;
-
-    margin-top: 10px;
-  }
-
-
-  .exhibition-description {
     font-size: 10px;
-
-    line-height: 1.7;
   }
 
 
-  .exhibition-row-arrow {
+  .museum-exhibition-description {
+    margin-top: 9px !important;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+  }
+
+
+  .museum-exhibition-arrow {
     font-size: 15px;
   }
 
 
-  .exhibitions-footer {
-    padding: 75px 6vw 35px;
+  /* FOOTER */
+
+  .museum-exhibitions-footer {
+    padding: 40px 6vw;
 
     flex-direction: column;
 
@@ -656,5 +677,48 @@
 
     gap: 30px;
   }
+}
 
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .museum-exhibitions-title {
+    height: 325px;
+  }
+
+  .museum-exhibitions-title h1 {
+    font-size: 56px;
+
+    letter-spacing: -2px;
+  }
+
+  .museum-exhibition-item {
+    grid-template-columns: 25px minmax(0, 1fr) 18px;
+
+    gap: 9px;
+  }
+
+  .museum-exhibition-info h2 {
+    font-size: 29px;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .museum-exhibitions-page *,
+  .museum-exhibitions-page *::before,
+  .museum-exhibitions-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

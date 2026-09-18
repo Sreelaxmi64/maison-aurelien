@@ -233,7 +233,7 @@ function Home() {
         <div className="hero-center">
 
           <p className="hero-kicker">
-            MAISON AURÉLIEN PRESENTS
+            BONSAI BENEATH PRESENTS
           </p>
 
           <h1>
@@ -273,7 +273,7 @@ function Home() {
 
 
         <div className="hero-side-left">
-          MAISON AURÉLIEN
+          BONSAI BENEATH
         </div>
 
 
@@ -318,14 +318,10 @@ function Home() {
         }`}
       >
 
-        {/* Section number */}
-
         <div className="section-number">
           02
         </div>
 
-
-        {/* Main text */}
 
         <div className="intro-content">
 
@@ -352,7 +348,7 @@ function Home() {
 
 
           <p className="intro-text">
-            Maison Aurélien brings together visual art,
+           BONSAI BENEATH brings together visual art,
             movement, music and theatre in one evolving
             cultural space.
           </p>
@@ -360,13 +356,9 @@ function Home() {
         </div>
 
 
-        {/* =================================================
-            FISH ANIMATION
-        ================================================= */}
+        {/* FISH ANIMATION */}
 
         <div className="fish-animation">
-
-          {/* Bubbles */}
 
           <span className="fish-bubble bubble-one"></span>
 
@@ -377,16 +369,12 @@ function Home() {
           <span className="fish-bubble bubble-four"></span>
 
 
-          {/* Fish */}
-
           <svg
             className="fish-svg"
             viewBox="0 0 240 120"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
-
-            {/* Body */}
 
             <path
               className="fish-body"
@@ -401,8 +389,6 @@ function Home() {
             />
 
 
-            {/* Tail */}
-
             <path
               className="fish-tail"
               d="
@@ -415,8 +401,6 @@ function Home() {
             />
 
 
-            {/* Top fin */}
-
             <path
               className="fish-fin"
               d="
@@ -426,8 +410,6 @@ function Home() {
               "
             />
 
-
-            {/* Bottom fin */}
 
             <path
               className="fish-fin"
@@ -439,8 +421,6 @@ function Home() {
             />
 
 
-            {/* Eye */}
-
             <circle
               className="fish-eye"
               cx="174"
@@ -448,8 +428,6 @@ function Home() {
               r="4"
             />
 
-
-            {/* Gill */}
 
             <path
               className="fish-detail"
@@ -459,8 +437,6 @@ function Home() {
               "
             />
 
-
-            {/* Decorative body line */}
 
             <path
               className="fish-detail"
@@ -474,8 +450,6 @@ function Home() {
 
         </div>
 
-
-        {/* Decorative small text */}
 
         <div className="house-corner-text">
           ART IS ALWAYS MOVING
@@ -683,9 +657,7 @@ function Home() {
 
           </div>
 
-          <h2>
-            EXHIBITIONS
-          </h2>
+          {/* LARGE EXHIBITIONS TITLE REMOVED */}
 
         </div>
 
@@ -711,7 +683,7 @@ function Home() {
             </div>
 
             <b>
-              ↗
+              🔍
             </b>
 
           </div>
@@ -736,7 +708,7 @@ function Home() {
             </div>
 
             <b>
-              ↗
+              🔍
             </b>
 
           </div>
@@ -761,7 +733,7 @@ function Home() {
             </div>
 
             <b>
-              ↗
+              🔍
             </b>
 
           </div>
@@ -788,7 +760,7 @@ function Home() {
         <div>
 
           <p className="section-label">
-            ABOUT MAISON AURÉLIEN
+            ABOUT BONSAI BENEATH
           </p>
 
           <h2>
@@ -802,7 +774,7 @@ function Home() {
 
 
           <p className="about-text">
-            Maison Aurélien is a meeting point for artists,
+            BONSAI BENEATH is a meeting point for artists,
             audiences and ideas — a space where contemporary
             culture can constantly evolve.
           </p>
