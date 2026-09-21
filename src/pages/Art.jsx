@@ -9,8 +9,8 @@ function Art() {
       <header className="inner-header">
 
         <Link to="/" className="brand">
-          <span className="brand-small">MAISON</span>
-          <span className="brand-main">AURÉLIEN</span>
+          <span className="brand-small">BONSAI</span>
+          <span className="brand-main">BENEATH</span>
         </Link>
 
         <nav className="inner-nav">
@@ -40,7 +40,7 @@ function Art() {
           <div className="art-page-heading">
 
             <p className="eyebrow">
-              MAISON AURÉLIEN — THE PROGRAMME
+              BONSAI BENEATH  — THE PROGRAMME
             </p>
 
             <h1>
