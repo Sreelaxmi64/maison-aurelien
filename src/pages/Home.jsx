@@ -53,11 +53,11 @@ function Home() {
           onClick={closeMenu}
         >
           <span className="brand-small">
-            MAISON
+            BONSAI 
           </span>
 
           <span className="brand-main">
-            AURÉLIEN
+            BENEATH
           </span>
         </Link>
 
@@ -348,7 +348,7 @@ function Home() {
 
 
           <p className="intro-text">
-           BONSAI BENEATH brings together visual art,
+            BONSAI BENEATH brings together visual art,
             movement, music and theatre in one evolving
             cultural space.
           </p>
@@ -356,7 +356,10 @@ function Home() {
         </div>
 
 
-        {/* FISH ANIMATION */}
+        {/* =====================================================
+            FISH ANIMATION
+            ONLY THE FISH DESIGN HAS BEEN CHANGED
+        ===================================================== */}
 
         <div className="fish-animation">
 
@@ -371,78 +374,108 @@ function Home() {
 
           <svg
             className="fish-svg"
-            viewBox="0 0 240 120"
+            viewBox="0 0 260 140"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
 
+            {/* MAIN BODY */}
+
             <path
               className="fish-body"
               d="
-                M65 60
-                C75 30 115 18 155 30
-                C185 39 202 50 205 60
-                C202 70 185 81 155 90
-                C115 102 75 90 65 60
+                M70 70
+                C82 42 112 27 148 29
+                C181 30 207 46 218 70
+                C207 94 181 110 148 111
+                C112 113 82 98 70 70
                 Z
               "
             />
 
+
+            {/* FLOWING TAIL */}
 
             <path
               className="fish-tail"
               d="
-                M68 60
-                L18 28
-                L32 60
-                L18 92
+                M76 70
+                C57 59 38 45 18 30
+                C28 48 34 60 38 70
+                C34 80 28 92 18 110
+                C39 96 58 82 76 70
                 Z
               "
             />
 
 
-            <path
-              className="fish-fin"
-              d="
-                M105 30
-                L120 7
-                L137 34
-              "
-            />
-
+            {/* TOP FIN */}
 
             <path
               className="fish-fin"
               d="
-                M108 90
-                L123 113
-                L140 86
+                M112 34
+                C119 21 130 12 143 8
+                C139 20 142 29 151 35
+                C137 31 125 31 112 34
+                Z
               "
             />
 
+
+            {/* LOWER FIN */}
+
+            <path
+              className="fish-fin"
+              d="
+                M116 105
+                C124 117 136 126 148 131
+                C143 119 145 110 153 104
+                C139 109 127 109 116 105
+                Z
+              "
+            />
+
+
+            {/* EYE */}
 
             <circle
               className="fish-eye"
-              cx="174"
-              cy="49"
-              r="4"
+              cx="190"
+              cy="56"
+              r="4.5"
             />
 
+
+            {/* GILL */}
 
             <path
               className="fish-detail"
               d="
-                M148 45
-                C137 53 137 68 148 76
+                M160 48
+                C148 57 148 82 160 92
               "
             />
 
 
+            {/* BODY CURVE */}
+
             <path
               className="fish-detail"
               d="
-                M95 50
-                C108 55 108 66 95 71
+                M116 51
+                C128 58 128 82 116 89
+              "
+            />
+
+
+            {/* MOUTH */}
+
+            <path
+              className="fish-detail"
+              d="
+                M215 68
+                C222 69 224 72 217 75
               "
             />
 
