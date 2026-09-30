@@ -1366,3 +1366,58 @@ html {
   }
 
 }
+
+/* =====================================================
+   FULL PAGE FISH — BEHIND CONTENT
+===================================================== */
+
+.fish-animation {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.fish-animation .fish {
+  position: absolute;
+  pointer-events: none;
+}
+
+.intro-section,
+.art-section,
+.statement-section,
+.exhibitions-section,
+.about-section,
+.visit-section,
+.site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* Keep all text and buttons above the fish */
+
+.intro-content,
+.section-heading,
+.art-grid,
+.statement-section > *,
+.exhibition-list,
+.about-section > *,
+.visit-section > *,
+.site-footer > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* =====================================================
+   FIX — KEEP THE HOUSE TEXT VISIBLE
+===================================================== */
+
+.intro-content .section-label,
+.intro-content .text-line,
+.intro-content .intro-text {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
 import "./Home.css"
 
@@ -8,7 +8,9 @@ const heroImage =
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [houseVisible, setHouseVisible] = useState(false)
+  const [danceTransition, setDanceTransition] = useState(false)
 
+  const navigate = useNavigate()
   const houseRef = useRef(null)
 
   useEffect(() => {
@@ -38,8 +40,718 @@ function Home() {
     setMenuOpen(false)
   }
 
+  const handleDanceClick = (event) => {
+    event.preventDefault()
+
+    setDanceTransition(true)
+
+    setTimeout(() => {
+      navigate("/art/dance")
+    }, 1100)
+  }
+
   return (
-    <div className="home-page">
+    <div className={`home-page ${danceTransition ? "dance-page-transition" : ""}`}>
+
+      {/* =====================================================
+          DANCE 3D TRANSITION
+          ONLY USED WHEN DANCE CARD IS CLICKED
+      ===================================================== */}
+
+      <style>{`
+
+        .dance-page-transition {
+          perspective: 1400px;
+          overflow: hidden;
+        }
+
+        .dance-page-transition::after {
+          content: "";
+          position: fixed;
+          inset: 0;
+          z-index: 1000;
+          pointer-events: none;
+          background:
+            radial-gradient(
+              circle at center,
+              rgba(238, 233, 220, 0) 0%,
+              rgba(25, 25, 22, 0.08) 45%,
+              rgba(25, 25, 22, 0.42) 100%
+            );
+          animation: danceTransitionDark 1.1s ease-in-out forwards;
+        }
+
+        .dance-page-transition .site-header,
+        .dance-page-transition .full-hero,
+        .dance-page-transition .intro-section,
+        .dance-page-transition .statement-section,
+        .dance-page-transition .exhibitions-section,
+        .dance-page-transition .about-section,
+        .dance-page-transition .visit-section,
+        .dance-page-transition .site-footer {
+          animation: danceBackgroundRecede 1.1s cubic-bezier(0.16, 1, 0.3, 1)
+            forwards;
+          transform-origin: center center;
+        }
+
+        .dance-page-transition .art-section {
+          position: relative;
+          z-index: 999;
+          transform-style: preserve-3d;
+          animation: danceSectionDisappear 1.1s
+            cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .dance-page-transition .art-card-two {
+          position: relative;
+          z-index: 1100;
+          transform-style: preserve-3d;
+          transform-origin: center center;
+          animation: danceCardFly 1.1s
+            cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          box-shadow:
+            0 0 0 1px rgba(255,255,255,0.12),
+            0 25px 50px rgba(25,25,22,0.18),
+            0 70px 140px rgba(25,25,22,0.22);
+        }
+
+        .dance-page-transition .art-card-two::before {
+          content: "";
+          position: absolute;
+          inset: -2px;
+          z-index: -1;
+          border: 1px solid rgba(255,255,255,0.45);
+          opacity: 0;
+          transform: translateZ(30px);
+          animation: danceCardGlow 1.1s ease-out forwards;
+        }
+
+        .dance-page-transition .art-card-two::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: 5;
+          pointer-events: none;
+          background:
+            linear-gradient(
+              115deg,
+              transparent 20%,
+              rgba(255,255,255,0.24) 48%,
+              transparent 70%
+            );
+          transform: translateX(-120%) translateZ(45px);
+          animation: danceLightSweep 1.1s ease-out forwards;
+        }
+
+        @keyframes danceCardFly {
+
+          0% {
+            transform:
+              perspective(1400px)
+              translate3d(0, 0, 0)
+              rotateX(0deg)
+              rotateY(0deg)
+              rotateZ(0deg)
+              scale(1);
+            filter: blur(0);
+          }
+
+          25% {
+            transform:
+              perspective(1400px)
+              translate3d(0, -10px, 80px)
+              rotateX(2deg)
+              rotateY(-4deg)
+              rotateZ(-1deg)
+              scale(1.05);
+            filter: blur(0);
+          }
+
+          55% {
+            transform:
+              perspective(1400px)
+              translate3d(0, -20px, 240px)
+              rotateX(4deg)
+              rotateY(-7deg)
+              rotateZ(-2deg)
+              scale(1.22);
+            filter: blur(0);
+          }
+
+          78% {
+            transform:
+              perspective(1400px)
+              translate3d(0, -35px, 500px)
+              rotateX(7deg)
+              rotateY(-10deg)
+              rotateZ(-3deg)
+              scale(1.65);
+            filter: blur(0.5px);
+          }
+
+          100% {
+            transform:
+              perspective(1400px)
+              translate3d(0, -60px, 1000px)
+              rotateX(10deg)
+              rotateY(-14deg)
+              rotateZ(-4deg)
+              scale(2.5);
+            filter: blur(3px);
+          }
+        }
+
+        @keyframes danceBackgroundRecede {
+
+          0% {
+            transform:
+              perspective(1600px)
+              translateZ(0)
+              scale(1);
+            filter: blur(0);
+          }
+
+          45% {
+            transform:
+              perspective(1600px)
+              translateZ(-70px)
+              scale(0.96);
+            filter: blur(0.4px);
+          }
+
+          100% {
+            transform:
+              perspective(1600px)
+              translateZ(-240px)
+              scale(0.82);
+            filter: blur(3px);
+          }
+        }
+
+        @keyframes danceSectionDisappear {
+
+          0% {
+            transform:
+              perspective(1600px)
+              translateZ(0)
+              scale(1);
+          }
+
+          100% {
+            transform:
+              perspective(1600px)
+              translateZ(-120px)
+              scale(0.9);
+          }
+        }
+
+        @keyframes danceTransitionDark {
+
+          0% {
+            opacity: 0;
+          }
+
+          45% {
+            opacity: 0.15;
+          }
+
+          100% {
+            opacity: 0.7;
+          }
+        }
+
+        @keyframes danceCardGlow {
+
+          0% {
+            opacity: 0;
+            transform: translateZ(0) scale(1);
+          }
+
+          45% {
+            opacity: 0.25;
+            transform: translateZ(30px) scale(1.02);
+          }
+
+          100% {
+            opacity: 0.7;
+            transform: translateZ(80px) scale(1.04);
+          }
+        }
+
+        @keyframes danceLightSweep {
+
+          0% {
+            transform:
+              translateX(-120%)
+              translateZ(45px);
+          }
+
+          100% {
+            transform:
+              translateX(120%)
+              translateZ(45px);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+          .dance-page-transition .art-card-two,
+          .dance-page-transition .art-section,
+          .dance-page-transition .site-header,
+          .dance-page-transition .full-hero,
+          .dance-page-transition .intro-section,
+          .dance-page-transition .statement-section,
+          .dance-page-transition .exhibitions-section,
+          .dance-page-transition .about-section,
+          .dance-page-transition .visit-section,
+          .dance-page-transition .site-footer,
+          .dance-page-transition::after {
+            animation: none !important;
+          }
+
+        }
+
+      `}</style>
+
+
+      {/* =====================================================
+          SWIMMING FISH — FULL PAGE ANIMATION
+      ===================================================== */}
+
+      <div className="swimming-fish-layer" aria-hidden="true">
+
+        <div className="swimming-fish fish-a">
+
+          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+
+            <defs>
+
+              <linearGradient
+                id="fishGoldA"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+              >
+
+                <stop
+                  offset="0%"
+                  stopColor="#d8c79d"
+                />
+
+                <stop
+                  offset="55%"
+                  stopColor="#a4775e"
+                />
+
+                <stop
+                  offset="100%"
+                  stopColor="#69705a"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+            <path
+              d="M62 60 C78 28 119 18 158 29 C188 37 205 49 220 60 C205 71 188 83 158 91 C119 102 78 92 62 60Z"
+              fill="url(#fishGoldA)"
+            />
+
+            <path
+              d="M67 60 C43 47 23 31 6 15 C12 36 22 50 37 60 C22 70 12 84 6 105 C23 89 43 73 67 60Z"
+              fill="#69705a"
+            />
+
+            <path
+              d="M118 31 C126 17 138 10 151 7 C147 20 150 27 160 33 C145 29 131 29 118 31Z"
+              fill="#a4775e"
+              opacity=".8"
+            />
+
+            <path
+              d="M121 89 C131 91 145 91 159 87 C151 95 148 104 150 113 C137 108 126 101 121 89Z"
+              fill="#a4775e"
+              opacity=".65"
+            />
+
+            <circle
+              cx="184"
+              cy="48"
+              r="4"
+              fill="#191916"
+            />
+
+            <path
+              d="M156 43 C145 53 145 67 156 77"
+              fill="none"
+              stroke="#eee9dc"
+              strokeWidth="3"
+              opacity=".45"
+            />
+
+            <path
+              d="M208 58 C219 59 224 62 212 66"
+              fill="none"
+              stroke="#eee9dc"
+              strokeWidth="2"
+              opacity=".6"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div className="swimming-fish fish-b">
+
+          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+
+            <defs>
+
+              <linearGradient
+                id="fishGoldB"
+                x1="0"
+                y1="1"
+                x2="1"
+                y2="0"
+              >
+
+                <stop
+                  offset="0%"
+                  stopColor="#69705a"
+                />
+
+                <stop
+                  offset="55%"
+                  stopColor="#b9b998"
+                />
+
+                <stop
+                  offset="100%"
+                  stopColor="#a4775e"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+            <path
+              d="M62 60 C78 28 119 18 158 29 C188 37 205 49 220 60 C205 71 188 83 158 91 C119 102 78 92 62 60Z"
+              fill="url(#fishGoldB)"
+            />
+
+            <path
+              d="M67 60 C43 47 23 31 6 15 C12 36 22 50 37 60 C22 70 12 84 6 105 C23 89 43 73 67 60Z"
+              fill="#a4775e"
+            />
+
+            <path
+              d="M117 32 C126 20 139 13 151 10 C147 21 150 28 160 34 C145 30 130 30 117 32Z"
+              fill="#69705a"
+            />
+
+            <circle
+              cx="184"
+              cy="48"
+              r="4"
+              fill="#191916"
+            />
+
+            <path
+              d="M157 44 C146 53 146 67 157 76"
+              fill="none"
+              stroke="#f7f3e9"
+              strokeWidth="3"
+              opacity=".5"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <div className="swimming-fish fish-c">
+
+          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+
+            <defs>
+
+              <linearGradient
+                id="fishGoldC"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+              >
+
+                <stop
+                  offset="0%"
+                  stopColor="#eee9dc"
+                />
+
+                <stop
+                  offset="50%"
+                  stopColor="#a4775e"
+                />
+
+                <stop
+                  offset="100%"
+                  stopColor="#69705a"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+            <path
+              d="M62 60 C78 28 119 18 158 29 C188 37 205 49 220 60 C205 71 188 83 158 91 C119 102 78 92 62 60Z"
+              fill="url(#fishGoldC)"
+            />
+
+            <path
+              d="M67 60 C43 47 23 31 6 15 C12 36 22 50 37 60 C22 70 12 84 6 105 C23 89 43 73 67 60Z"
+              fill="#69705a"
+            />
+
+            <circle
+              cx="184"
+              cy="48"
+              r="4"
+              fill="#191916"
+            />
+
+            <path
+              d="M158 43 C147 53 147 67 158 77"
+              fill="none"
+              stroke="#fff"
+              strokeWidth="3"
+              opacity=".5"
+            />
+
+          </svg>
+
+        </div>
+
+
+        <span className="fish-bubble page-bubble-one"></span>
+        <span className="fish-bubble page-bubble-two"></span>
+        <span className="fish-bubble page-bubble-three"></span>
+
+      </div>
+
+
+      <style>{`
+
+        .swimming-fish-layer {
+          position: fixed;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          pointer-events: none;
+          z-index: 80;
+        }
+
+        .swimming-fish {
+          position: absolute;
+          left: -280px;
+          width: 190px;
+          height: auto;
+          opacity: 0.22;
+          filter: drop-shadow(0 8px 14px rgba(25, 25, 22, 0.12));
+          will-change: transform;
+        }
+
+        .swimming-fish svg {
+          width: 100%;
+          height: auto;
+          display: block;
+          overflow: visible;
+          animation: fishBodyFloat 2.8s ease-in-out infinite;
+        }
+
+        .fish-a {
+          top: 18%;
+          animation: fishAcrossOne 25s linear infinite;
+        }
+
+        .fish-b {
+          top: 49%;
+          width: 145px;
+          opacity: 0.18;
+          animation: fishAcrossTwo 34s linear infinite;
+        }
+
+        .fish-c {
+          top: 76%;
+          width: 220px;
+          opacity: 0.15;
+          animation: fishAcrossThree 30s linear infinite;
+        }
+
+        .fish-b svg {
+          animation-delay: -1.2s;
+        }
+
+        .fish-c svg {
+          animation-delay: -2s;
+        }
+
+        .fish-bubble {
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          border: 1px solid currentColor;
+          border-radius: 50%;
+          opacity: 0;
+        }
+
+        .page-bubble-one {
+          left: 34%;
+          top: 14%;
+          animation: bubbleRise 5s ease-out infinite;
+        }
+
+        .page-bubble-two {
+          left: 56%;
+          top: 43%;
+          width: 5px;
+          height: 5px;
+          animation: bubbleRise 6s 1.8s ease-out infinite;
+        }
+
+        .page-bubble-three {
+          left: 73%;
+          top: 72%;
+          width: 9px;
+          height: 9px;
+          animation: bubbleRise 7s 3s ease-out infinite;
+        }
+
+        @keyframes fishAcrossOne {
+
+          0% {
+            transform: translate3d(-320px, 0, 0);
+          }
+
+          50% {
+            transform: translate3d(calc(50vw - 30px), -22px, 0);
+          }
+
+          100% {
+            transform: translate3d(calc(100vw + 320px), 8px, 0);
+          }
+
+        }
+
+        @keyframes fishAcrossTwo {
+
+          0% {
+            transform: translate3d(calc(100vw + 300px), 0, 0) scaleX(-1);
+          }
+
+          50% {
+            transform: translate3d(calc(50vw - 30px), 24px, 0) scaleX(-1);
+          }
+
+          100% {
+            transform: translate3d(-300px, -8px, 0) scaleX(-1);
+          }
+
+        }
+
+        @keyframes fishAcrossThree {
+
+          0% {
+            transform: translate3d(-340px, 0, 0);
+          }
+
+          50% {
+            transform: translate3d(calc(50vw - 20px), -18px, 0);
+          }
+
+          100% {
+            transform: translate3d(calc(100vw + 340px), 12px, 0);
+          }
+
+        }
+
+        @keyframes fishBodyFloat {
+
+          0%,
+          100% {
+            transform: rotate(0deg);
+          }
+
+          50% {
+            transform: rotate(-3deg);
+          }
+
+        }
+
+        @keyframes bubbleRise {
+
+          0% {
+            opacity: 0;
+            transform: translateY(15px) scale(0.7);
+          }
+
+          20% {
+            opacity: 0.22;
+          }
+
+          100% {
+            opacity: 0;
+            transform: translateY(-85px) scale(1.15);
+          }
+
+        }
+
+        @media (max-width: 650px) {
+
+          .swimming-fish {
+            width: 130px;
+          }
+
+          .fish-b {
+            width: 105px;
+          }
+
+          .fish-c {
+            width: 150px;
+          }
+
+          .fish-a {
+            top: 22%;
+          }
+
+          .fish-b {
+            top: 52%;
+          }
+
+          .fish-c {
+            top: 78%;
+          }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+          .swimming-fish,
+          .swimming-fish svg,
+          .fish-bubble {
+            animation: none !important;
+          }
+
+          .swimming-fish {
+            display: none;
+          }
+
+        }
+
+      `}</style>
+
 
       {/* =====================================================
           HEADER
@@ -52,13 +764,13 @@ function Home() {
           className="brand"
           onClick={closeMenu}
         >
+
           <span className="brand-small">
-            BONSAI 
+           <h2>ARTO</h2>
           </span>
 
-          <span className="brand-main">
-            BENEATH
-          </span>
+          
+
         </Link>
 
 
@@ -95,9 +807,11 @@ function Home() {
           onClick={() => setMenuOpen(true)}
           aria-label="Open menu"
         >
+
           <span></span>
           <span></span>
           <span></span>
+
         </button>
 
       </header>
@@ -108,11 +822,14 @@ function Home() {
       ===================================================== */}
 
       {menuOpen && (
+
         <div className="mobile-menu">
 
           <div className="mobile-menu-header">
 
-            <span>MENU</span>
+            <span>
+              MENU
+            </span>
 
             <button
               onClick={closeMenu}
@@ -192,6 +909,7 @@ function Home() {
           </div>
 
         </div>
+
       )}
 
 
@@ -213,7 +931,6 @@ function Home() {
 
         <div className="hero-overlay"></div>
 
-
         <div className="hero-line hero-line-top"></div>
 
         <div className="hero-line hero-line-bottom"></div>
@@ -221,7 +938,9 @@ function Home() {
 
         <div className="hero-top-label">
 
-          <span>01</span>
+          <span>
+            01
+          </span>
 
           <span>
             CONTEMPORARY ART HOUSE
@@ -233,7 +952,7 @@ function Home() {
         <div className="hero-center">
 
           <p className="hero-kicker">
-            BONSAI BENEATH PRESENTS
+            ARTO PRESENTS
           </p>
 
           <h1>
@@ -241,11 +960,15 @@ function Home() {
             A PLACE
             <br />
 
-            <span>FOR ART</span>
+            <span>
+              FOR ART
+            </span>
 
             <br />
 
-            <i>TO BREATHE.</i>
+            <i>
+              TO BREATHE.
+            </i>
 
           </h1>
 
@@ -259,6 +982,7 @@ function Home() {
             to="/art"
             className="hero-explore"
           >
+
             <span>
               EXPLORE THE HOUSE
             </span>
@@ -341,145 +1065,23 @@ function Home() {
             </span>
 
             <span className="text-line">
-              <em>meet.</em>
+
+              <em>
+                meet.
+              </em>
+
             </span>
 
           </h2>
 
 
           <p className="intro-text">
+
             BONSAI BENEATH brings together visual art,
             movement, music and theatre in one evolving
             cultural space.
+
           </p>
-
-        </div>
-
-
-        {/* =====================================================
-            FISH ANIMATION
-            ONLY THE FISH DESIGN HAS BEEN CHANGED
-        ===================================================== */}
-
-        <div className="fish-animation">
-
-          <span className="fish-bubble bubble-one"></span>
-
-          <span className="fish-bubble bubble-two"></span>
-
-          <span className="fish-bubble bubble-three"></span>
-
-          <span className="fish-bubble bubble-four"></span>
-
-
-          <svg
-            className="fish-svg"
-            viewBox="0 0 260 140"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-
-            {/* MAIN BODY */}
-
-            <path
-              className="fish-body"
-              d="
-                M70 70
-                C82 42 112 27 148 29
-                C181 30 207 46 218 70
-                C207 94 181 110 148 111
-                C112 113 82 98 70 70
-                Z
-              "
-            />
-
-
-            {/* FLOWING TAIL */}
-
-            <path
-              className="fish-tail"
-              d="
-                M76 70
-                C57 59 38 45 18 30
-                C28 48 34 60 38 70
-                C34 80 28 92 18 110
-                C39 96 58 82 76 70
-                Z
-              "
-            />
-
-
-            {/* TOP FIN */}
-
-            <path
-              className="fish-fin"
-              d="
-                M112 34
-                C119 21 130 12 143 8
-                C139 20 142 29 151 35
-                C137 31 125 31 112 34
-                Z
-              "
-            />
-
-
-            {/* LOWER FIN */}
-
-            <path
-              className="fish-fin"
-              d="
-                M116 105
-                C124 117 136 126 148 131
-                C143 119 145 110 153 104
-                C139 109 127 109 116 105
-                Z
-              "
-            />
-
-
-            {/* EYE */}
-
-            <circle
-              className="fish-eye"
-              cx="190"
-              cy="56"
-              r="4.5"
-            />
-
-
-            {/* GILL */}
-
-            <path
-              className="fish-detail"
-              d="
-                M160 48
-                C148 57 148 82 160 92
-              "
-            />
-
-
-            {/* BODY CURVE */}
-
-            <path
-              className="fish-detail"
-              d="
-                M116 51
-                C128 58 128 82 116 89
-              "
-            />
-
-
-            {/* MOUTH */}
-
-            <path
-              className="fish-detail"
-              d="
-                M215 68
-                C222 69 224 72 217 75
-              "
-            />
-
-          </svg>
 
         </div>
 
@@ -537,9 +1139,10 @@ function Home() {
               </small>
 
               <h3>
-                Bonsai
+
+                ARTO
                 <br />
-                Beneath
+               
               </h3>
 
             </div>
@@ -551,9 +1154,16 @@ function Home() {
           </Link>
 
 
+          {/* =================================================
+              DANCE CARD — ONLY MODIFIED CARD
+          ================================================= */}
+
           <Link
             to="/art/dance"
-            className="art-card art-card-two"
+            className={`art-card art-card-two ${
+              danceTransition ? "dance-card-transition" : ""
+            }`}
+            onClick={handleDanceClick}
           >
 
             <span>
@@ -657,9 +1267,14 @@ function Home() {
           </p>
 
           <h2>
-            ART IS
+
+            ART
             <br />
-            <em>ALIVE.</em>
+
+            <em>
+              ALIVE.
+            </em>
+
           </h2>
 
         </div>
@@ -801,15 +1416,19 @@ function Home() {
             A house built
             <br />
 
-            around <em>ideas.</em>
+            around <em>
+              ideas.
+            </em>
 
           </h2>
 
 
           <p className="about-text">
+
             BONSAI BENEATH is a meeting point for artists,
             audiences and ideas — a space where contemporary
             culture can constantly evolve.
+
           </p>
 
         </div>
@@ -838,7 +1457,9 @@ function Home() {
             COME
             <br />
 
-            <em>EXPERIENCE</em>
+            <em>
+              EXPERIENCE
+            </em>
 
             <br />
 
@@ -848,11 +1469,13 @@ function Home() {
 
 
           <button>
+
             PLAN YOUR VISIT
 
             <b>
               ↗
             </b>
+
           </button>
 
         </div>
@@ -869,12 +1492,10 @@ function Home() {
         <div>
 
           <span className="brand-small">
-            MAISON
+            ARTO
           </span>
 
-          <span className="brand-main">
-            AURÉLIEN
-          </span>
+         
 
         </div>
 
